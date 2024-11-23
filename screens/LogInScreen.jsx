@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native'
-import { useNavigation } from '@react-navigation/native';
+// import { useNavigation } from '@react-navigation/native';
 import React from 'react'
 import imgIntro from "../assets/imgIntro.png"
 
@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     justifyContent: 'center',
-    //alignItems: 'center',
   },
   title: {
     fontSize: 60,
@@ -69,7 +68,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
   },
-  frase:{
-    color:'#7F1E57'
+  frase: {
+    color: '#7F1E57'
   }
 })
