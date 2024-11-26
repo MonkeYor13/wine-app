@@ -1,15 +1,15 @@
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native'
-// import { useNavigation } from '@react-navigation/native';
 import React from 'react'
-import imgIntro from "../assets/imgIntro.png"
+import imgIntro from "../assets/imgs/imgIntro.png"
+import intro from "../data/intro"
 
 export default function LogInScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <ImageBackground source={imgIntro} style={styles.content}>
-        <Text style={styles.title}>Vinoteca {'\n'}   Gourmet</Text >
+        <Text style={styles.title}>{intro[0].title}</Text >
         <Text style={styles.subtitle}>
-          Descubre los mejores vinos para cada ocasión.
+          {intro[0].subtitle}
         </Text>
       </ImageBackground>
 
@@ -19,7 +19,7 @@ export default function LogInScreen({ navigation }) {
       >
         <Text style={styles.buttonText}>Ingresar</Text>
       </TouchableOpacity>
-      <Text style={styles.frase}>El vino perfecto, a un clic de distancia.</Text>
+      <Text style={styles.frase}>{intro[0].frase}</Text>
     </View>
   )
 }

@@ -1,9 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native"
+import { View, Image, TouchableOpacity, StyleSheet } from "react-native"
+import { LogInScreen } from "../imports/screens"
+import MyTabs from "../navigation/MyTabs"
 import Icon from "react-native-vector-icons/Ionicons";
-import MyTabs from "./MyTabs"
-import LogInScreen from "../screens/LogInScreen"
-
+import ImageProfile from "../assets/imgs/imageProfile.jpeg"
+import intro from "../data/intro"
 
 export default function MyStack() {
   const Stack = createNativeStackNavigator()
@@ -11,14 +12,14 @@ export default function MyStack() {
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Login" component={LogInScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Home" component={MyTabs} options={{
-        headerTransparent: true,
+        title: intro[0].title,
+        headerTitleAlign: "center",
         headerShadowVisible: false,
-        headerTintColor: "green",
-        headerTitle: () => null,
+        // headerTransparent: true,
         headerLeft: () => (
           <TouchableOpacity style={styles.avatarContainer}>
             <Image
-              source={{ uri: "https://via.placeholder.com/50" }} // Reemplaza con tu imagen
+              source={ImageProfile} // Reemplaza con tu imagen
               style={styles.avatar}
             />
           </TouchableOpacity>
@@ -34,6 +35,7 @@ export default function MyStack() {
           </View>
         ),
       }} />
+
     </Stack.Navigator>
   )
 }
