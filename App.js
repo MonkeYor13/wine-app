@@ -16,3 +16,7 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+
+
+// QUEDAMOS EN CREAR LOS ESTILOS DE LA CARDS Y PASAR LOS PROPS
