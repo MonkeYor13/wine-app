@@ -5,6 +5,7 @@ import MyTabs from "../navigation/MyTabs"
 import Icon from "react-native-vector-icons/Ionicons";
 import ImageProfile from "../assets/imgs/imageProfile.jpeg"
 import intro from "../data/intro"
+import globalStyles from "../data/globalStyles";
 
 export default function MyStack() {
   const Stack = createNativeStackNavigator()
@@ -13,9 +14,10 @@ export default function MyStack() {
       <Stack.Screen name="Login" component={LogInScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Home" component={MyTabs} options={{
         title: intro[0].title,
+        // headerTintColor: globalStyles.colorBgLogin,
+        headerTitleStyle: { fontFamily: "Cormorant" },
         headerTitleAlign: "center",
         headerShadowVisible: false,
-        // headerTransparent: true,
         headerLeft: () => (
           <TouchableOpacity style={styles.avatarContainer}>
             <Image
@@ -27,15 +29,14 @@ export default function MyStack() {
         headerRight: () => (
           <View style={styles.iconsContainer}>
             <TouchableOpacity style={styles.iconButton}>
-              <Icon name="cart-outline" size={24} color="#000" />
+              <Icon name="cart-outline" size={24} color={globalStyles.colorBgLogin} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.iconButton}>
-              <Icon name="notifications-outline" size={24} color="#000" />
+              <Icon name="notifications-outline" size={24} color={globalStyles.colorBgLogin} />
             </TouchableOpacity>
           </View>
         ),
       }} />
-
     </Stack.Navigator>
   )
 }

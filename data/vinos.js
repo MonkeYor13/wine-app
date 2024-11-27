@@ -9,6 +9,7 @@ const vinos = [
     imagen:
       "https://static.millesima.com/s3/contrib/common/landing-pages/2020/chateau-margaux/images/1001_2012NM_c-p-800.png",
     enOferta: false,
+    popular: true,
   },
   {
     id: 2,
@@ -42,6 +43,7 @@ const vinos = [
     imagen:
       "https://www.totalwine.com/dynamic/490x/media/sys_master/twmmedia/hc5/h67/8818724667422.png",
     enOferta: false,
+    popular: true,
   },
   {
     id: 5,
@@ -53,6 +55,7 @@ const vinos = [
     imagen:
       "https://static.millesima.com/s3/attachements/h1000px/J3513_NM_c.png",
     enOferta: false,
+    popular: true,
   },
   {
     id: 6,
@@ -73,6 +76,7 @@ const vinos = [
       "Una mezcla sofisticada con notas de vainilla, cereza y un toque mineral.",
     imagen: "https://thekeywine.vn/wp-content/uploads/2022/12/opus-one.png",
     enOferta: false,
+    popular: true,
   },
   {
     id: 8,
@@ -84,6 +88,7 @@ const vinos = [
     imagen:
       "https://manila-premiere-wines.com/wp-content/uploads/2015/06/Norton-Malbec-Reserva-2018-.png",
     enOferta: true,
+    popular: true,
   },
   {
     id: 9,
@@ -93,6 +98,7 @@ const vinos = [
     descripcion: "Mineral y fresco, con aromas de manzana verde y miel.",
     imagen: "https://www.global-wines.cz/data/images/w900h1320/9/419.png",
     enOferta: false,
+    popular: true,
   },
   {
     id: 10,
@@ -104,6 +110,7 @@ const vinos = [
     imagen:
       "https://www.eccellenza.com.au/wp-content/uploads/2022/06/Amarone.png",
     enOferta: false,
+    popular: true,
   },
   {
     id: 11,
@@ -125,6 +132,7 @@ const vinos = [
     imagen:
       "https://www.maisoncastel.wine/images/dynamics/wines/aoc-selection/aoc-pouilly-fume.png",
     enOferta: false,
+    popular: true,
   },
   {
     id: 13,
@@ -147,6 +155,7 @@ const vinos = [
     imagen:
       "https://www.bataillard.ch/media/image/0c/a7/e5/10405fb7f13dd6c49.png",
     enOferta: false,
+    popular: true,
   },
   {
     id: 15,
