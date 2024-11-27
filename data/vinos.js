@@ -8,7 +8,7 @@ const vinos = [
       "Un vino elegante y refinado con notas de frutos negros y un toque de roble.",
     imagen:
       "https://static.millesima.com/s3/contrib/common/landing-pages/2020/chateau-margaux/images/1001_2012NM_c-p-800.png",
-    enOferta: false,
+    offer: false,
     popular: true,
   },
   {
@@ -20,7 +20,7 @@ const vinos = [
       "Complejo y robusto, con aromas de rosas y un final persistente.",
     imagen:
       "https://www.vinello.jp/media/image/26/12/b8/barolo-la-morra-riserva-elio-filippino.png",
-    enOferta: true,
+    offer: true,
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const vinos = [
       "Un vino chileno con cuerpo, destacando sabores de frutos rojos y especias.",
     imagen:
       "https://static.millesima.com/s3/attachements/h1000px/G303_2020_c.png",
-    enOferta: true,
+    offer: true,
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const vinos = [
       "Un clásico australiano con gran intensidad y carácter, perfecto para ocasiones especiales.",
     imagen:
       "https://www.totalwine.com/dynamic/490x/media/sys_master/twmmedia/hc5/h67/8818724667422.png",
-    enOferta: false,
+    offer: false,
     popular: true,
   },
   {
@@ -54,7 +54,7 @@ const vinos = [
       "Vino icónico de España con notas de cuero, tabaco y frutas maduras.",
     imagen:
       "https://static.millesima.com/s3/attachements/h1000px/J3513_NM_c.png",
-    enOferta: false,
+    offer: false,
     popular: true,
   },
   {
@@ -65,7 +65,7 @@ const vinos = [
     descripcion: "Fresco y vibrante, con aromas de cítricos y toques herbales.",
     imagen:
       "https://static.millesima.com/s3/attachements/h1000px/G500_2022NM_c.png",
-    enOferta: true,
+    offer: true,
   },
   {
     id: 7,
@@ -75,7 +75,7 @@ const vinos = [
     descripcion:
       "Una mezcla sofisticada con notas de vainilla, cereza y un toque mineral.",
     imagen: "https://thekeywine.vn/wp-content/uploads/2022/12/opus-one.png",
-    enOferta: false,
+    offer: false,
     popular: true,
   },
   {
@@ -87,7 +87,7 @@ const vinos = [
       "Un argentino con cuerpo medio, equilibrado y toques de ciruela.",
     imagen:
       "https://manila-premiere-wines.com/wp-content/uploads/2015/06/Norton-Malbec-Reserva-2018-.png",
-    enOferta: true,
+    offer: true,
     popular: true,
   },
   {
@@ -97,7 +97,7 @@ const vinos = [
     añoDeCosecha: 2020,
     descripcion: "Mineral y fresco, con aromas de manzana verde y miel.",
     imagen: "https://www.global-wines.cz/data/images/w900h1320/9/419.png",
-    enOferta: false,
+    offer: false,
     popular: true,
   },
   {
@@ -109,7 +109,7 @@ const vinos = [
       "Intenso y con dulzura sutil, ideal para platos ricos y postres.",
     imagen:
       "https://www.eccellenza.com.au/wp-content/uploads/2022/06/Amarone.png",
-    enOferta: false,
+    offer: false,
     popular: true,
   },
   {
@@ -120,7 +120,7 @@ const vinos = [
     descripcion: "Clásico español con sabores de frutas maduras y especias.",
     imagen:
       "https://www.totalwine.com/dynamic/490x/media/sys_master/twmmedia/h63/h5a/14160544497694.png",
-    enOferta: true,
+    offer: true,
   },
   {
     id: 12,
@@ -131,7 +131,7 @@ const vinos = [
       "Vibrante y elegante, con notas de humo y hierba recién cortada.",
     imagen:
       "https://www.maisoncastel.wine/images/dynamics/wines/aoc-selection/aoc-pouilly-fume.png",
-    enOferta: false,
+    offer: false,
     popular: true,
   },
   {
@@ -143,7 +143,7 @@ const vinos = [
       "Potente y especiado, ideal para acompañar carnes a la parrilla.",
     imagen:
       "https://www.ridgewine.com/wp-content/uploads/2022/02/20ZPR-web.png",
-    enOferta: true,
+    offer: true,
   },
   {
     id: 14,
@@ -154,7 +154,7 @@ const vinos = [
       "Espumoso italiano fresco y afrutado, perfecto para celebraciones.",
     imagen:
       "https://www.bataillard.ch/media/image/0c/a7/e5/10405fb7f13dd6c49.png",
-    enOferta: false,
+    offer: false,
     popular: true,
   },
   {
@@ -165,7 +165,7 @@ const vinos = [
     descripcion: "Aromático y dulce, con notas de lichi y pétalos de rosa.",
     imagen:
       "https://images.vivino.com/thumbs/06NF4rCsSd--rfFcwFsfzg_pb_x600.png",
-    enOferta: true,
+    offer: true,
   },
 ];
 
