@@ -4,11 +4,11 @@
     "slug": "wine-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/1200.png",
+    "icon": "./assets/1024.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/1024.png",
+      "image": "./assets/1200.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },

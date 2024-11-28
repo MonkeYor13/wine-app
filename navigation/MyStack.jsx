@@ -14,7 +14,6 @@ export default function MyStack() {
       <Stack.Screen name="Login" component={LogInScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Home" component={MyTabs} options={{
         title: intro[0].title,
-        // headerTintColor: globalStyles.colorBgLogin,
         headerTitleStyle: { fontFamily: "Cormorant" },
         headerTitleAlign: "center",
         headerShadowVisible: false,

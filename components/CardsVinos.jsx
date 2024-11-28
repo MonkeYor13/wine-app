@@ -4,7 +4,7 @@ import vinos from '../data/vinos'
 import globalStyles from '../data/globalStyles';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
-export default function CardsVinos({selectedButton}) {
+export default function CardsVinos({ selectedButton }) {
   // Filtrado de vinos según el botón seleccionado
   const filteredVinos = vinos.filter((vino) => {
     if (selectedButton === "All") return true;
@@ -22,18 +22,19 @@ export default function CardsVinos({selectedButton}) {
       renderItem={({ item }) => (
         <View style={styles.vinoCard}>
           <Image source={{ uri: item.imagen }} style={styles.vinoImage} resizeMode='contain' />
-          
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Text style={styles.vinoNombre}>${item.precio}</Text>
-          <MaterialIcons name="favorite" size={24} color="black" />
+
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 8 }}>
+            <Text style={styles.vinoNombre}>${item.precio}</Text>
+            <MaterialIcons name="favorite" size={24} color="black" />
           </View>
-          <View style={{alignItems: 'center'}}>
-          <Text style={styles.vinoNombre}>{item.nombre}</Text>
-          <Text style={styles.vinoNombre}>{item.mililitros}ML</Text>
+
+          <View style={{ alignItems: 'center',}}>
+            <Text style={[styles.vinoNombre, styles.vinoText]}>{item.nombre}</Text>
+            <Text style={styles.vinoNombre}>{item.mililitros}ML</Text>
           </View>
         </View>
       )} // Renderizar cada elemento
-      ItemSeparatorComponent={<View style={{width: 16}}/>}
+      ItemSeparatorComponent={<View style={{ width: 16 }} />}
     />
   )
 }
@@ -48,10 +49,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   vinoImage: {
-  width: "100%",
-  height: "60%",
+    width: "100%",
+    height: "60%",
   },
   vinoNombre: {
-    fontWeight: "bold",
+    // fontWeight: "bold",
   },
+  vinoText:{
+    fontFamily: 'Bodoni'
+  }
 })
