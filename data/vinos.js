@@ -10,6 +10,8 @@ const vinos = [
       "https://static.millesima.com/s3/contrib/common/landing-pages/2020/chateau-margaux/images/1001_2012NM_c-p-800.png",
     offer: false,
     popular: true,
+    precio: 450, // En dólares
+    mililitros: 750, // En mililitros
   },
   {
     id: 2,
@@ -21,6 +23,8 @@ const vinos = [
     imagen:
       "https://www.vinello.jp/media/image/26/12/b8/barolo-la-morra-riserva-elio-filippino.png",
     offer: true,
+    precio: 350,
+    mililitros: 750,
   },
   {
     id: 3,
@@ -32,6 +36,8 @@ const vinos = [
     imagen:
       "https://static.millesima.com/s3/attachements/h1000px/G303_2020_c.png",
     offer: true,
+    precio: 320,
+    mililitros: 750,
   },
   {
     id: 4,
@@ -44,6 +50,8 @@ const vinos = [
       "https://www.totalwine.com/dynamic/490x/media/sys_master/twmmedia/hc5/h67/8818724667422.png",
     offer: false,
     popular: true,
+    precio: 650,
+    mililitros: 750,
   },
   {
     id: 5,
@@ -56,6 +64,8 @@ const vinos = [
       "https://static.millesima.com/s3/attachements/h1000px/J3513_NM_c.png",
     offer: false,
     popular: true,
+    precio: 580,
+    mililitros: 750,
   },
   {
     id: 6,
@@ -66,6 +76,8 @@ const vinos = [
     imagen:
       "https://static.millesima.com/s3/attachements/h1000px/G500_2022NM_c.png",
     offer: true,
+    precio: 40,
+    mililitros: 750,
   },
   {
     id: 7,
@@ -77,6 +89,8 @@ const vinos = [
     imagen: "https://thekeywine.vn/wp-content/uploads/2022/12/opus-one.png",
     offer: false,
     popular: true,
+    precio: 400,
+    mililitros: 750,
   },
   {
     id: 8,
@@ -88,7 +102,8 @@ const vinos = [
     imagen:
       "https://manila-premiere-wines.com/wp-content/uploads/2015/06/Norton-Malbec-Reserva-2018-.png",
     offer: true,
-    popular: true,
+    precio: 30,
+    mililitros: 750,
   },
   {
     id: 9,
@@ -99,6 +114,8 @@ const vinos = [
     imagen: "https://www.global-wines.cz/data/images/w900h1320/9/419.png",
     offer: false,
     popular: true,
+    precio: 200,
+    mililitros: 750,
   },
   {
     id: 10,
@@ -111,6 +128,8 @@ const vinos = [
       "https://www.eccellenza.com.au/wp-content/uploads/2022/06/Amarone.png",
     offer: false,
     popular: true,
+    precio: 300,
+    mililitros: 750,
   },
   {
     id: 11,
@@ -121,6 +140,8 @@ const vinos = [
     imagen:
       "https://www.totalwine.com/dynamic/490x/media/sys_master/twmmedia/h63/h5a/14160544497694.png",
     offer: true,
+    precio: 50,
+    mililitros: 750,
   },
   {
     id: 12,
@@ -133,6 +154,8 @@ const vinos = [
       "https://www.maisoncastel.wine/images/dynamics/wines/aoc-selection/aoc-pouilly-fume.png",
     offer: false,
     popular: true,
+    precio: 60,
+    mililitros: 750,
   },
   {
     id: 13,
@@ -144,6 +167,8 @@ const vinos = [
     imagen:
       "https://www.ridgewine.com/wp-content/uploads/2022/02/20ZPR-web.png",
     offer: true,
+    precio: 55,
+    mililitros: 750,
   },
   {
     id: 14,
@@ -156,6 +181,8 @@ const vinos = [
       "https://www.bataillard.ch/media/image/0c/a7/e5/10405fb7f13dd6c49.png",
     offer: false,
     popular: true,
+    precio: 25,
+    mililitros: 750,
   },
   {
     id: 15,
@@ -166,6 +193,8 @@ const vinos = [
     imagen:
       "https://images.vivino.com/thumbs/06NF4rCsSd--rfFcwFsfzg_pb_x600.png",
     offer: true,
+    precio: 45,
+    mililitros: 750,
   },
 ];
 
