@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View, FlatList, Image } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react'
 import vinos from '../data/vinos'
 import globalStyles from '../data/globalStyles';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function CardsVinos({ selectedButton }) {
   // Filtrado de vinos según el botón seleccionado
@@ -13,6 +14,24 @@ export default function CardsVinos({ selectedButton }) {
     return false; // Prevención de errores
   });
 
+  // Limitar texto de los nombres de vinos con 3 puntitos
+  const truncarTexto = (texto, limite) => {
+    return texto.length > limite ? texto.substring(0, limite) + "..." : texto;
+  };
+
+  // Manejar favoritos en el resto de las categorias
+  const [favorites, setFavorites] = useState([]); // Estado para los favoritos
+
+  const toggleFavorite = (id) => {
+    setFavorites((prevFavorites) =>
+      prevFavorites.includes(id)
+        ? prevFavorites.filter((favId) => favId !== id) // Remover de favoritos
+        : [...prevFavorites, id] // Agregar a favoritos
+    );
+  };
+
+  const navigation = useNavigation(); //para la navegacion entre pantallas
+
   return (
     <FlatList
       horizontal
@@ -20,17 +39,20 @@ export default function CardsVinos({ selectedButton }) {
       data={filteredVinos} // Datos filtrados
       keyExtractor={(item) => item.id.toString()} // Clave única para cada elemento
       renderItem={({ item }) => (
+
         <View style={styles.vinoCard}>
-          <Image source={{ uri: item.imagen }} style={styles.vinoImage} resizeMode='contain' />
-
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 8 }}>
+          <TouchableOpacity onPress={() => navigation.navigate('DetallesVino', { vino: item })} style={{ flex: 1 }}>
+            <Image source={{ uri: item.imagen }} style={styles.vinoImage} resizeMode='contain' />
+          </TouchableOpacity>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingTop: 8 }}>
             <Text style={styles.vinoNombre}>${item.precio}</Text>
-            <MaterialIcons name="favorite" size={24} color="black" />
+            <TouchableOpacity onPress={() => toggleFavorite(item.id)}>
+              <MaterialIcons name="favorite" size={24} color={favorites.includes(item.id) ? 'red' : 'black'} />
+            </TouchableOpacity>
           </View>
-
-          <View style={{ alignItems: 'center',}}>
-            <Text style={[styles.vinoNombre, styles.vinoText]}>{item.nombre}</Text>
-            <Text style={styles.vinoNombre}>{item.mililitros}ML</Text>
+          <View>
+            <Text style={[styles.vinoNombre, styles.vinoText]}>{truncarTexto(item.nombre, 15)}</Text>
+            <Text style={styles.vinoMililitros}>{item.mililitros}ML</Text>
           </View>
         </View>
       )} // Renderizar cada elemento
@@ -42,20 +64,24 @@ export default function CardsVinos({ selectedButton }) {
 const styles = StyleSheet.create({
   vinoCard: {
     borderRadius: 8,
+    width: 180,
+    height: 300,
     backgroundColor: globalStyles.colorCard,
-    width: 160,
-    height: 250,
     justifyContent: 'center',
-    paddingHorizontal: 8,
+    padding: 8
   },
   vinoImage: {
-    width: "100%",
-    height: "60%",
+    flex: 1,
+    width: '100%',
+    height: '80%',
   },
-  vinoNombre: {
-    // fontWeight: "bold",
+  vinoMililitros: {
+    fontFamily: 'Cormorant',
+    color: globalStyles.colorInactIcon,
+    textAlign: 'center'
   },
-  vinoText:{
-    fontFamily: 'Bodoni'
+  vinoText: {
+    fontFamily: 'BodoniBold',
+    textAlign: 'center'
   }
 })

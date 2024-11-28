@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
     color: globalStyles.colorBgLogin
   },
   contentCard:{
-    marginTop: 40.
+    marginTop: 30,
   }
 });

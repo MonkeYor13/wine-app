@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { View, Image, TouchableOpacity, StyleSheet } from "react-native"
-import { LogInScreen } from "../imports/screens"
+import { LogInScreen, DetallesVino } from "../imports/screens"
 import MyTabs from "../navigation/MyTabs"
 import Icon from "react-native-vector-icons/Ionicons";
 import ImageProfile from "../assets/imgs/imageProfile.jpeg"
@@ -36,6 +36,8 @@ export default function MyStack() {
           </View>
         ),
       }} />
+      <Stack.Screen name="DetallesVino" component={DetallesVino} />
+
     </Stack.Navigator>
   )
 }
