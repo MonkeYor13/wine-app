@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import MyStack from "./navigation/MyStack";
 import { useFonts } from "expo-font";
+import { ToysProvider } from "./contexto/ToysProvider";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -12,9 +13,11 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <NavigationContainer>
-      <MyStack />
-    </NavigationContainer>
+    <ToysProvider>
+      <NavigationContainer>
+        <MyStack />
+      </NavigationContainer>
+    </ToysProvider>
   );
 }
 
