@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import MyStack from "./navigation/MyStack";
 import { useFonts } from "expo-font";
-import { ToysProvider } from "./contexto/ToysProvider";
+import UsarProvider from "./contexto/UsarProvider";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -13,13 +13,12 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <ToysProvider>
+    <UsarProvider>
       <NavigationContainer>
         <MyStack />
       </NavigationContainer>
-    </ToysProvider>
+    </UsarProvider>
   );
 }
 
-//QUEDAMOS EN DONDE DEBEMOS REPASAR CONTEXT PARA ASI PODER APREDENR
-//HACER USO DE LOS ESTADOS Y LISTA EN TODOA LA APP
+//ESTAMOS EMIGRANDO TODO EL TRABAJO A CONTEXT PARA PODER HACER USO DE TODO LOS ELEMENTOS EN LA APP

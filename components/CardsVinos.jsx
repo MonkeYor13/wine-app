@@ -1,35 +1,22 @@
 import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import vinos from '../data/vinos'
 import globalStyles from '../data/globalStyles';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useNavigation } from '@react-navigation/native';
+import Contexto from '../contexto/Contexto';
 
-export default function CardsVinos({ selectedButton }) {
-  // Filtrado de vinos según el botón seleccionado
-  const filteredVinos = vinos.filter((vino) => {
-    if (selectedButton === "All") return true;
-    if (selectedButton === "Offers") return vino.offer;
-    if (selectedButton === "Popular") return vino.popular;
-    return false; // Prevención de errores
-  });
+
+export default function CardsVinos() {
+  const {filteredVinos, toggleLike, like, setLike} = useContext(Contexto)
 
   // Limitar texto de los nombres de vinos con 3 puntitos
   const truncarTexto = (texto, limite) => {
     return texto.length > limite ? texto.substring(0, limite) + "..." : texto;
   };
 
-  // Manejar favoritos en el resto de las categorias
-  const [favorites, setFavorites] = useState([]); // Estado para los favoritos
 
-  const toggleFavorite = (id) => {
-    setFavorites((prevFavorites) =>
-      prevFavorites.includes(id)
-        ? prevFavorites.filter((favId) => favId !== id) // Remover de favoritos
-        : [...prevFavorites, id] // Agregar a favoritos
-    );
-  };
-
+  
   const navigation = useNavigation(); //para la navegacion entre pantallas
 
   return (
@@ -41,15 +28,23 @@ export default function CardsVinos({ selectedButton }) {
       renderItem={({ item }) => (
 
         <View style={styles.vinoCard}>
+
           <TouchableOpacity onPress={() => navigation.navigate('DetallesVino', { vino: item })} style={{ flex: 1 }}>
             <Image source={{ uri: item.imagen }} style={styles.vinoImage} resizeMode='contain' />
           </TouchableOpacity>
+
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingTop: 8 }}>
             <Text style={styles.vinoNombre}>${item.precio}</Text>
-            <TouchableOpacity onPress={() => toggleFavorite(item.id)}>
-              <MaterialIcons name="favorite" size={24} color={favorites.includes(item.id) ? 'red' : 'black'} />
+
+            <TouchableOpacity onPress={() => toggleLike(item.id)}>
+              <MaterialIcons 
+              name="favorite" 
+              size={24} 
+              color={like.includes(item.like) ? 'red' : 'black'} 
+              />
             </TouchableOpacity>
           </View>
+
           <View>
             <Text style={[styles.vinoNombre, styles.vinoText]}>{truncarTexto(item.nombre, 15)}</Text>
             <Text style={styles.vinoMililitros}>{item.mililitros}ML</Text>

@@ -1,11 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, FlatList } from 'react-native'
+import React, { useContext } from 'react'
+import Contexto from '../contexto/Contexto'
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function OfferScreen() {
+
   return (
-    <View>
-      <Text>OfferScreen</Text>
-    </View>
+    <FlatList
+      data={toys.filter((toy) => favorites.includes(toy.id))}
+      renderItem={({ item }) => (
+        <Text>{item.name}</Text>
+      )}
+    />
+
   )
 }
 

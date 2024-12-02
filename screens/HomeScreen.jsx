@@ -6,22 +6,24 @@ import ButtonsCategoration from "../components/ButtonsCategoration";
 import CardsVinos from "../components/CardsVinos";
 
 export default function HomeScreen() {
-  const [selectedButton, setSelectedButton] = useState('All');
-
-
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
+
       {/* TITULO */}
       <View style={styles.contentTitle}>
         <Text style={[styles.title, { fontWeight: "700" }]}>Drinks</Text>
         <Text style={styles.title}> Collection</Text>
       </View>
+
+
       {/* BOTONES DE CATEGORIZACION */}
-      <ButtonsCategoration selectedButton={selectedButton} setSelectedButton={setSelectedButton} />
+      <ButtonsCategoration />
+
+
       {/* DATOS DEL LA LISTA DE OBJETOS USANDO MAP */}
       <View style={styles.contentCard}>
-        <CardsVinos selectedButton={selectedButton} />
+        <CardsVinos />
       </View>
     </View>
   );
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
     fontFamily: "Cormorant",
     color: globalStyles.colorBgLogin
   },
-  contentCard:{
+  contentCard: {
     marginTop: 30,
   }
 });

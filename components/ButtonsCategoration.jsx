@@ -1,14 +1,11 @@
-import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, } from "react-native";
 import globalStyles from "../data/globalStyles";
+import Contexto from "../contexto/Contexto";
+import { useContext } from "react";
 
-export default function ButtonsCategoration({ selectedButton, setSelectedButton }) {
-  // Array de botones
-  const buttons = [
-    { label: "All", value: "All" },
-    { label: "Offers", value: "Offers" },
-    { label: "Popular", value: "Popular" },
-    // Puedes agregar más botones aquí
-  ];
+
+export default function ButtonsCategoration() {
+  const{selectedButton, setSelectedButton, buttons} = useContext(Contexto)
 
   return (
     <View style={styles.buttonContainer}>
