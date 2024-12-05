@@ -26,18 +26,6 @@ export default function UsarProvider({ children }) {
     return false; // Prevención de errores
   });
 
-  // Estado para los likes
-  const [like, setLike] = useState([]);
-  // Función para dar Like a un vino, 
-  //prevLike es la lista previa de like, 
-  //.includes se usa para verificar si algo ya esta dentro de una lista o texto
-  const toggleLike = (id) => {
-    setLike((prevLike) =>
-      prevLike.includes(id) ? prevLike.filter((likeId) => likeId !== id) // Remover de favoritos
-      : [...prevLike, id] // Agregar a favoritos
-    );
-  }
-
 
 
   return (
@@ -49,8 +37,6 @@ export default function UsarProvider({ children }) {
         setSelectedButton,
         buttons,
         filteredVinos,
-        like,
-        toggleLike,
       }}
     >
       {children}

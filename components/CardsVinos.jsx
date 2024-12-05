@@ -8,7 +8,7 @@ import Contexto from '../contexto/Contexto';
 
 
 export default function CardsVinos() {
-  const {filteredVinos, toggleLike, like, setLike} = useContext(Contexto)
+  const {filteredVinos, } = useContext(Contexto)
 
   // Limitar texto de los nombres de vinos con 3 puntitos
   const truncarTexto = (texto, limite) => {
@@ -36,11 +36,11 @@ export default function CardsVinos() {
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingTop: 8 }}>
             <Text style={styles.vinoNombre}>${item.precio}</Text>
 
-            <TouchableOpacity onPress={() => toggleLike(item.id)}>
+            <TouchableOpacity onPress={{}}>
               <MaterialIcons 
-              name="favorite" 
-              size={24} 
-              color={like.includes(item.like) ? 'red' : 'black'} 
+              name={item.like ? 'favorite' : 'favorite-outline'} 
+              size={30} 
+              color={item.like ? 'red' : 'gray'}
               />
             </TouchableOpacity>
           </View>
