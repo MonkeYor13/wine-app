@@ -21,4 +21,4 @@ export default function App() {
   );
 }
 
-//ESTAMOS EMIGRANDO TODO EL TRABAJO A CONTEXT PARA PODER HACER USO DE TODO LOS ELEMENTOS EN LA APP
+//se termino de aprender lo de pasar la infomraicon ocn like y usar contexto.

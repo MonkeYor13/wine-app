@@ -2,22 +2,19 @@ import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react
 import React, { useState, useContext } from 'react'
 import vinos from '../data/vinos'
 import globalStyles from '../data/globalStyles';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/Ionicons'; // O cualquier otra librería de iconos
 import { useNavigation } from '@react-navigation/native';
 import Contexto from '../contexto/Contexto';
 
 
 export default function CardsVinos() {
-  const {filteredVinos, } = useContext(Contexto)
-
-  // Limitar texto de los nombres de vinos con 3 puntitos
-  const truncarTexto = (texto, limite) => {
-    return texto.length > limite ? texto.substring(0, limite) + "..." : texto;
-  };
+  const { filteredVinos, toggleLike, isVinoLiked, truncarTexto } = useContext(Contexto)
 
 
-  
+
   const navigation = useNavigation(); //para la navegacion entre pantallas
+
+
 
   return (
     <FlatList
@@ -36,12 +33,11 @@ export default function CardsVinos() {
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingTop: 8 }}>
             <Text style={styles.vinoNombre}>${item.precio}</Text>
 
-            <TouchableOpacity onPress={{}}>
-              <MaterialIcons 
-              name={item.like ? 'favorite' : 'favorite-outline'} 
-              size={30} 
-              color={item.like ? 'red' : 'gray'}
-              />
+            <TouchableOpacity onPress={() => toggleLike(item)}>
+              <Icon
+                name={isVinoLiked(item) ? 'heart' : 'heart-outline'}
+                size={30}
+                color={isVinoLiked(item) ? 'red' : 'black'} />
             </TouchableOpacity>
           </View>
 

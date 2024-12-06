@@ -5,14 +5,14 @@ import { useNavigation } from '@react-navigation/native';
 
 
 export default function OfferScreen() {
-
+  const { likedVinos } = useContext(Contexto);
   return (
-    <FlatList
-      data={toys.filter((toy) => favorites.includes(toy.id))}
-      renderItem={({ item }) => (
-        <Text>{item.name}</Text>
-      )}
-    />
+    <View style={styles.container}>
+      <Text style={styles.title}>Vinos Favoritos:</Text>
+      {likedVinos.map((vino) => (
+        <Text key={vino.id} style={styles.vinoName}>{vino.nombre}</Text>
+      ))}
+    </View>
 
   )
 }
