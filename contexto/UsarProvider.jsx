@@ -1,4 +1,3 @@
-import { View, Text } from 'react-native'
 import React, { useState } from 'react'
 import Contexto from './Contexto'
 import vinos from '../data/vinos'

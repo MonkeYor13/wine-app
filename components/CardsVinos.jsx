@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native'
 import React, { useState, useContext } from 'react'
-import vinos from '../data/vinos'
 import globalStyles from '../data/globalStyles';
 import Icon from 'react-native-vector-icons/Ionicons'; // O cualquier otra librería de iconos
 import { useNavigation } from '@react-navigation/native';
@@ -8,13 +7,8 @@ import Contexto from '../contexto/Contexto';
 
 
 export default function CardsVinos() {
-  const { filteredVinos, toggleLike, isVinoLiked, truncarTexto } = useContext(Contexto)
-
-
-
+  const { filteredVinos, toggleLike, isVinoLiked, truncarTexto } = useContext(Contexto) //usamos el contexto
   const navigation = useNavigation(); //para la navegacion entre pantallas
-
-
 
   return (
     <FlatList
