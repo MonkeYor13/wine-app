@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native'
-import React, { useState, useContext } from 'react'
+import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity,  } from 'react-native'
+import React, { useContext } from 'react'
 import globalStyles from '../data/globalStyles';
 import Icon from 'react-native-vector-icons/Ionicons'; // O cualquier otra librería de iconos
 import { useNavigation } from '@react-navigation/native';
@@ -9,6 +9,7 @@ import Contexto from '../contexto/Contexto';
 export default function CardsVinos() {
   const { filteredVinos, toggleLike, isVinoLiked, truncarTexto } = useContext(Contexto) //usamos el contexto
   const navigation = useNavigation(); //para la navegacion entre pantallas
+  
 
   return (
     <FlatList
@@ -25,7 +26,7 @@ export default function CardsVinos() {
           </TouchableOpacity>
 
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingTop: 8 }}>
-            <Text style={styles.vinoNombre}>${item.precio}</Text>
+            <Text style={styles.vinoText}>${item.precio}</Text>
 
             <TouchableOpacity onPress={() => toggleLike(item)}>
               <Icon
@@ -36,7 +37,7 @@ export default function CardsVinos() {
           </View>
 
           <View>
-            <Text style={[styles.vinoNombre, styles.vinoText]}>{truncarTexto(item.nombre, 15)}</Text>
+            <Text style={[ styles.vinoText]}>{truncarTexto(item.nombre, 15)}</Text>
             <Text style={styles.vinoMililitros}>{item.mililitros}ML</Text>
           </View>
         </View>
@@ -63,10 +64,12 @@ const styles = StyleSheet.create({
   vinoMililitros: {
     fontFamily: 'Cormorant',
     color: globalStyles.colorInactIcon,
-    textAlign: 'center'
+    textAlign: 'center',
+    
   },
   vinoText: {
     fontFamily: 'BodoniBold',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: 16
   }
 })

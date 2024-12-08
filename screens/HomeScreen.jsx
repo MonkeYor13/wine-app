@@ -1,4 +1,4 @@
-import { StyleSheet, Text, FlatList, View, Image, ScrollView } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import globalStyles from "../data/globalStyles";
