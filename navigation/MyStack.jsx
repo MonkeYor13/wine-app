@@ -36,7 +36,12 @@ export default function MyStack() {
           </View>
         ),
       }} />
-      <Stack.Screen name="DetallesVino" component={DetallesVino} />
+      <Stack.Screen name="DetallesVino" component={DetallesVino} options={{
+        headerShadowVisible: false,
+        headerTitleStyle: { fontFamily: "Cormorant" },
+        headerTitleAlign: "center",
+
+      }} />
 
 
     </Stack.Navigator>

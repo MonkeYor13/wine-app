@@ -21,4 +21,4 @@ export default function App() {
   );
 }
 
-//se termino de aprender lo de pasar la infomraicon ocn like y usar contexto.
+//estamos modificando la pantalla de detalles del vino 
