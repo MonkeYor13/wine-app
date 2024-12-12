@@ -21,4 +21,4 @@ export default function App() {
   );
 }
 
-//estamos modificando la pantalla de detalles del vino 
+//se terminoi detalles screen ahora estamos viendo lo de el carrito pasar la info

@@ -1,11 +1,12 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { View, Image, TouchableOpacity, StyleSheet } from "react-native"
-import { LogInScreen, DetallesVino} from "../imports/screens"
+import { LogInScreen, DetallesVino } from "../imports/screens"
 import MyTabs from "../navigation/MyTabs"
 import Icon from "react-native-vector-icons/Ionicons";
 import ImageProfile from "../assets/imgs/imageProfile.jpeg"
 import intro from "../data/intro"
 import globalStyles from "../data/globalStyles";
+import IconsHeader from "../components/IconsHeader";
 
 export default function MyStack() {
   const Stack = createNativeStackNavigator()
@@ -25,22 +26,13 @@ export default function MyStack() {
             />
           </TouchableOpacity>
         ),
-        headerRight: () => (
-          <View style={styles.iconsContainer}>
-            <TouchableOpacity style={styles.iconButton}>
-              <Icon name="cart-outline" size={24} color={globalStyles.colorBgLogin} />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.iconButton}>
-              <Icon name="notifications-outline" size={24} color={globalStyles.colorBgLogin} />
-            </TouchableOpacity>
-          </View>
-        ),
+        headerRight: () => (<IconsHeader />),
       }} />
       <Stack.Screen name="DetallesVino" component={DetallesVino} options={{
         headerShadowVisible: false,
         headerTitleStyle: { fontFamily: "Cormorant" },
         headerTitleAlign: "center",
-
+        headerRight: () => (<IconsHeader />),
       }} />
 
 
