@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, FlatList, Image } from 'react-native'
-import React, { useContext } from 'react'
-import Contexto from '../contexto/Contexto'
-import globalStyles from '../data/globalStyles';
+import { StyleSheet, Text, View, FlatList, Image } from "react-native";
+import React, { useContext } from "react";
+import Contexto from "../contexto/Contexto";
+import globalStyles from "../data/globalStyles";
 
 export default function FavoriteScreen() {
   const { likedVinos } = useContext(Contexto);
@@ -12,23 +12,25 @@ export default function FavoriteScreen() {
         data={likedVinos} // Lista de vinos favoritos
         keyExtractor={(item) => item.id.toString()} // Clave única para cada vino
         renderItem={({ item }) => (
-
           <View style={styles.favoriteCard}>
             <View style={styles.favoriteContentText}>
-
               <Text style={styles.favoriteTitle}>{item.nombre}</Text>
               <Text style={styles.favoriteFrase}>{item.frase}</Text>
 
               <View style={styles.favoriteContentDetails}>
                 <Text style={styles.favoriteDetails}>Source: {item.pais}</Text>
                 <Text style={styles.favoriteDetails}>{item.mililitros}ML</Text>
-                <Text style={styles.favoriteDetails}>{item.calificacion} /5</Text>
+                <Text style={styles.favoriteDetails}>
+                  {item.calificacion} /5
+                </Text>
               </View>
-
             </View>
-            <Image style={styles.favoriteImage} source={{ uri: item.imagen }} resizeMode='contain' />
+            <Image
+              style={styles.favoriteImage}
+              source={{ uri: item.imagen }}
+              resizeMode="contain"
+            />
           </View>
-
         )}
         ListEmptyComponent={
           <Text style={styles.emptyText}>No tienes vinos favoritos aún.</Text>
@@ -36,7 +38,7 @@ export default function FavoriteScreen() {
         ItemSeparatorComponent={<View style={styles.ItemSeparatorComponent} />}
       />
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
     backgroundColor: globalStyles.colorBgScreen,
   },
   vinosFavoritos: {
-    fontFamily: 'Bodoni',
+    fontFamily: "Bodoni",
     marginTop: 16,
     fontSize: 16,
     marginBottom: 16,
@@ -59,47 +61,47 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 6,
     paddingVertical: 16,
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   favoriteContentText: {
-    justifyContent: 'space-around',
-    flex: 3
+    justifyContent: "space-around",
+    flex: 3,
   },
   favoriteContentDetails: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly'
+    flexDirection: "row",
+    justifyContent: "space-evenly",
   },
   favoriteTitle: {
-    fontFamily: 'BodoniBold',
+    fontFamily: "BodoniBold",
     fontSize: 16,
-    textAlign: 'center',
+    textAlign: "center",
   },
   favoriteFrase: {
-    fontFamily: 'Cormorant',
+    fontFamily: "Cormorant",
     fontSize: 24,
-    textAlign: 'center',
+    textAlign: "center",
     color: globalStyles.colorBgLogin,
   },
   favoriteDetails: {
-    fontFamily: 'Cormorant',
+    fontFamily: "Cormorant",
     fontSize: 16,
-    color: globalStyles.colorInactIcon
+    color: globalStyles.colorInactIcon,
   },
   favoriteImage: {
     width: 100,
     height: 180,
-    alignSelf: 'center',
+    alignSelf: "center",
     flex: 1,
-    justifyContent: 'center'
+    justifyContent: "center",
   },
   emptyText: {
-    fontFamily: 'BodoniBold',
+    fontFamily: "BodoniBold",
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: "center",
     marginTop: 40,
     color: globalStyles.colorBgLogin,
   },
   ItemSeparatorComponent: {
-    height: 24
-  }
-})
+    height: 24,
+  },
+});
